@@ -1,0 +1,12 @@
+#
+# Content elements
+#
+mod.wizards.newContentElement.wizardItems.special.elements {
+	ceexamples_flexforms {
+		icon = gfx/c_wiz/user_defined.gif
+		title = LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_flexforms.title
+		description = LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_flexforms.description
+		tt_content_defValues.CType = ceexamples_flexforms
+	}
+}
+mod.wizards.newContentElement.wizardItems.special.show := addToList(ceexamples_flexforms)

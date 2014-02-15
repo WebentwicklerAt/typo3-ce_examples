@@ -1,0 +1,2 @@
+# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_flexforms.description
+enableFlexForms = 1
