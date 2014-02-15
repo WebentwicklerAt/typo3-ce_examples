@@ -37,4 +37,3 @@ if (array_key_exists('enableDerived', $extConf) && $extConf['enableDerived']) {
 		$pluginType = Tx_Extbase_Utility_Extension::PLUGIN_TYPE_CONTENT_ELEMENT
 	);
 }
-

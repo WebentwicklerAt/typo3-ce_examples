@@ -2,3 +2,5 @@
 enableFlexForms = 1
 # cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_derived.description
 enableDerived = 1
+# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_extend.description
+enableExtend = 1

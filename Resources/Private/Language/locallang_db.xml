@@ -12,6 +12,9 @@
 			<label index="ceexamples_flexforms.sDEF.textfield.label">Textfield:</label>
 			<label index="ceexamples_derived.title">CE Derived</label>
 			<label index="ceexamples_derived.description">CE derived from default element.</label>
+			<label index="ceexamples_extend.title">CE Extend</label>
+			<label index="ceexamples_extend.description">CE extends table 'tt_content'.</label>
+			<label index="tt_content.extra_field">Extra field:</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="ceexamples_flexforms.title">CE FlexForms</label>
@@ -20,6 +23,9 @@
 			<label index="ceexamples_flexforms.sDEF.textfield.label">Textfeld:</label>
 			<label index="ceexamples_derived.title">CE Abgeleitet</label>
 			<label index="ceexamples_derived.description">CE abgeleitet von einem Standardelement.</label>
+			<label index="ceexamples_extend.title">CE Erweitert</label>
+			<label index="ceexamples_extend.description">CE erweitert die Tabelle 'tt_content'.</label>
+			<label index="tt_content.extra_field">Zusätzliches Feld:</label>
 		</languageKey>
 	</data>
 </T3locallang>

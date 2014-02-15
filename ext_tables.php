@@ -57,3 +57,34 @@ if (array_key_exists('enableDerived', $extConf) && $extConf['enableDerived']) {
 	// DE: PageTs hinzufügen
 	t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/pageTsConfig-Derived.txt">');
 }
+
+
+// EN: CE extends table 'tt_content'
+// DE: CE erweitert die Tabelle 'tt_content'
+if (array_key_exists('enableExtend', $extConf) && $extConf['enableExtend']) {
+	$tempColumns = array(
+		'extra_field' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xml:tt_content.extra_field',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'max' => 255,
+			),
+		),
+	);
+	t3lib_div::loadTCA('tt_content');
+	t3lib_extMgm::addTCAcolumns('tt_content', $tempColumns, 1);
+	// EN: Don't display field for all content types, but 'text' only
+	// DE: Feld nicht bei allen Inhaltstypen anzeigen, sondern ausschließlich bei 'Text'
+	t3lib_extMgm::addToAllTCAtypes(
+		$table = 'tt_content',
+		$str = 'extra_field',
+		$specificTypesList = 'text',
+		$position = 'before:bodytext'
+	);
+	
+	// EN: Add TypoScript setup
+	// DE: TypoScript Setup hinzufügen
+	t3lib_extMgm::addTypoScript($key = $_EXTKEY, $type = 'setup', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/setup-Extend.txt">', $afterStaticUid = 0);
+}
