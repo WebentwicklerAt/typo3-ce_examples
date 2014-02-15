@@ -20,3 +20,21 @@ if (array_key_exists('enableFlexForms', $extConf) && $extConf['enableFlexForms']
 		$pluginType = Tx_Extbase_Utility_Extension::PLUGIN_TYPE_CONTENT_ELEMENT
 	);
 }
+
+
+// EN: CE derived from default element
+// DE: CE abgeleitet von einem Standardelement
+if (array_key_exists('enableDerived', $extConf) && $extConf['enableDerived']) {
+	Tx_Extbase_Utility_Extension::configurePlugin(
+		$extensionName = $_EXTKEY,
+		$pluginName = 'Derived',
+		$controllerActions = array(
+			'ContentElement' => 'derived',
+		),
+		$nonCacheableControllerActions = array(
+			'ContentElement' => '',
+		),
+		$pluginType = Tx_Extbase_Utility_Extension::PLUGIN_TYPE_CONTENT_ELEMENT
+	);
+}
+

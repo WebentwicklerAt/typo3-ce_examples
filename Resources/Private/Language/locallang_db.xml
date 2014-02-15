@@ -10,12 +10,16 @@
 			<label index="ceexamples_flexforms.description">CE defined with FlexForms.</label>
 			<label index="ceexamples_flexforms.sDEF.sheetTitle">Content</label>
 			<label index="ceexamples_flexforms.sDEF.textfield.label">Textfield:</label>
+			<label index="ceexamples_derived.title">CE Derived</label>
+			<label index="ceexamples_derived.description">CE derived from default element.</label>
 		</languageKey>
 		<languageKey index="de" type="array">
 			<label index="ceexamples_flexforms.title">CE FlexForms</label>
 			<label index="ceexamples_flexforms.description">CE definiert mit FlexForms.</label>
 			<label index="ceexamples_flexforms.sDEF.sheetTitle">Inhalt</label>
 			<label index="ceexamples_flexforms.sDEF.textfield.label">Textfeld:</label>
+			<label index="ceexamples_derived.title">CE Abgeleitet</label>
+			<label index="ceexamples_derived.description">CE abgeleitet von einem Standardelement.</label>
 		</languageKey>
 	</data>
 </T3locallang>

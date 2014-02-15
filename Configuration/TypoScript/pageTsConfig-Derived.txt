@@ -1,0 +1,12 @@
+#
+# Content elements
+#
+mod.wizards.newContentElement.wizardItems.special.elements {
+	ceexamples_derived {
+		icon = gfx/c_wiz/user_defined.gif
+		title = LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_derived.title
+		description = LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_derived.description
+		tt_content_defValues.CType = ceexamples_derived
+	}
+}
+mod.wizards.newContentElement.wizardItems.special.show := addToList(ceexamples_derived)
