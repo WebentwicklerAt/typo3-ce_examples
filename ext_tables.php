@@ -132,22 +132,18 @@ if (array_key_exists('enableInline', $extConf) && $extConf['enableInline']) {
 				'minitems' => 0,
 				'maxitems' => 9999,
 				'appearance' => array(
-					#'levelLinksPosition' => 'none',
-					#'enabledControls' => '',
+					'collapseAll' => TRUE,
+					'expandSingle' => TRUE,
 				),
 			),
 		),
 	);
 	t3lib_div::loadTCA('tt_content');
 	t3lib_extMgm::addTCAcolumns('tt_content', $tempColumns, 1);
-	// EN: Don't display field for all content types, but 'text' only
-	// DE: Feld nicht bei allen Inhaltstypen anzeigen, sondern ausschließlich bei 'Text'
-	t3lib_extMgm::addToAllTCAtypes(
-		$table = 'tt_content',
-		$str = 'record_reference;;;;1-1-1',
-		$specificTypesList = '',
-		$position = ''
-	);
+	// EN: Don't display field for all content types, but 'ceexamples_inline' only
+	// DE: Feld nicht bei allen Inhaltstypen anzeigen, sondern ausschließlich bei 'ceexamples_inline'
+	$pluginSignature = str_replace('_', '', $_EXTKEY) . '_' . strtolower($pluginName);
+	$GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['showitem'] = 'CType;;4;button;1-1-1, header;;3;;2-2-2,record_reference;;;;1-1-1';
 	
 	// EN: Add PageTs
 	// DE: PageTs hinzufügen

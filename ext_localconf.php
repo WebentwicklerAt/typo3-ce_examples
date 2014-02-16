@@ -19,6 +19,10 @@ if (array_key_exists('enableFlexForms', $extConf) && $extConf['enableFlexForms']
 		),
 		$pluginType = Tx_Extbase_Utility_Extension::PLUGIN_TYPE_CONTENT_ELEMENT
 	);
+	
+	// EN: Custom rendering of CE in backend
+	// DE: Individuelle Darstellung des CE im Backend
+	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem'][] = 'EXT:' . $_EXTKEY . '/Classes/Hooks/TtContentDrawItem.php:Tx_CeExamples_Hooks_TtContentDrawItem';
 }
 
 
