@@ -6,26 +6,42 @@
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
+			<label index="ceexamples_flexforms.label">CE FlexForms: CE defined with FlexForms.</label>
 			<label index="ceexamples_flexforms.title">CE FlexForms</label>
 			<label index="ceexamples_flexforms.description">CE defined with FlexForms.</label>
 			<label index="ceexamples_flexforms.sDEF.sheetTitle">Content</label>
 			<label index="ceexamples_flexforms.sDEF.textfield.label">Textfield:</label>
+			<label index="ceexamples_derived.label">CE Derived: CE derived from default element.</label>
 			<label index="ceexamples_derived.title">CE Derived</label>
 			<label index="ceexamples_derived.description">CE derived from default element.</label>
+			<label index="ceexamples_extend.label">CE Extend: CE extends table 'tt_content'.</label>
 			<label index="ceexamples_extend.title">CE Extend</label>
 			<label index="ceexamples_extend.description">CE extends table 'tt_content'.</label>
 			<label index="tt_content.extra_field">Extra field:</label>
+			<label index="ceexamples_inline.label">CE Inline: CE referencing data from another table.</label>
+			<label index="ceexamples_inline.title">CE Inline</label>
+			<label index="ceexamples_inline.description">CE referencing data from another table.</label>
+			<label index="tt_content.record_reference">Records:</label>
+			<label index="tx_ceexamples_domain_model_record.extra_field.label">Extra field:</label>
 		</languageKey>
 		<languageKey index="de" type="array">
+			<label index="ceexamples_flexforms.label">CE FlexForms: CE definiert mit FlexForms.</label>
 			<label index="ceexamples_flexforms.title">CE FlexForms</label>
 			<label index="ceexamples_flexforms.description">CE definiert mit FlexForms.</label>
 			<label index="ceexamples_flexforms.sDEF.sheetTitle">Inhalt</label>
 			<label index="ceexamples_flexforms.sDEF.textfield.label">Textfeld:</label>
+			<label index="ceexamples_derived.title">CE Abgeleitet: CE abgeleitet von einem Standardelement.</label>
 			<label index="ceexamples_derived.title">CE Abgeleitet</label>
 			<label index="ceexamples_derived.description">CE abgeleitet von einem Standardelement.</label>
+			<label index="ceexamples_extend.label">CE Erweitert: CE erweitert die Tabelle 'tt_content'.</label>
 			<label index="ceexamples_extend.title">CE Erweitert</label>
 			<label index="ceexamples_extend.description">CE erweitert die Tabelle 'tt_content'.</label>
 			<label index="tt_content.extra_field">Zusätzliches Feld:</label>
+			<label index="ceexamples_inline.label">CE Inline: CE referenziert Daten aus einer anderen Tabelle.</label>
+			<label index="ceexamples_inline.title">CE Inline</label>
+			<label index="ceexamples_inline.description">CE referenziert Daten aus einer anderen Tabelle.</label>
+			<label index="tt_content.record_reference">Datensätze:</label>
+			<label index="tx_ceexamples_domain_model_record.extra_field.label">Zusätzliches Feld:</label>
 		</languageKey>
 	</data>
 </T3locallang>

@@ -88,3 +88,68 @@ if (array_key_exists('enableExtend', $extConf) && $extConf['enableExtend']) {
 	// DE: TypoScript Setup hinzufügen
 	t3lib_extMgm::addTypoScript($key = $_EXTKEY, $type = 'setup', '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/setup-Extend.txt">', $afterStaticUid = 0);
 }
+
+
+// EN: CE referencing data from another table
+// DE: CE referenziert Daten aus einer anderen Tabelle
+if (array_key_exists('enableInline', $extConf) && $extConf['enableInline']) {
+	Tx_Extbase_Utility_Extension::registerPlugin(
+		$extensionName = $_EXTKEY,
+		$pluginName = 'Inline',
+		$pluginTitle = 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xml:ceexamples_inline.title',
+		$pluginIconPathAndFilename = t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_ceexamples_inline.gif'
+	);
+	
+	$TCA['tx_ceexamples_domain_model_record'] = array(
+		'ctrl' => array(
+			'title' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xml:tx_ceexamples_domain_model_record.title',
+			'label' => 'extra_field',	
+			'tstamp' => 'tstamp',
+			'crdate' => 'crdate',
+			'cruser_id' => 'cruser_id',
+			'default_sortby' => 'ORDER BY crdate',	
+			'delete' => 'deleted',	
+			'enablecolumns' => array(		
+				'disabled' => 'hidden',
+			),
+			'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/Record.php',
+			'iconfile' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_ceexamples_domain_model_record.gif',
+		),
+	);
+	t3lib_extMgm::allowTableOnStandardPages('tx_ceexamples_domain_model_record');
+	
+	// EN: IRRE is not working in FlexForms in TYPO3 4.x
+	// DE: IRRE funktioniert nicht FlexForms in TYPO3 4.x
+	$tempColumns = array(
+		'record_reference' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xml:tt_content.record_reference',
+			'config' => array(
+				'type' => 'inline',
+				'foreign_table' => 'tx_ceexamples_domain_model_record',	
+				'foreign_table_where' => 'AND tx_ceexamples_domain_model_record.pid=###CURRENT_PID### ORDER BY tx_ceexamples_domain_model_record.uid',	
+				'size' => 5,	
+				'minitems' => 0,
+				'maxitems' => 9999,
+				'appearance' => array(
+					#'levelLinksPosition' => 'none',
+					#'enabledControls' => '',
+				),
+			),
+		),
+	);
+	t3lib_div::loadTCA('tt_content');
+	t3lib_extMgm::addTCAcolumns('tt_content', $tempColumns, 1);
+	// EN: Don't display field for all content types, but 'text' only
+	// DE: Feld nicht bei allen Inhaltstypen anzeigen, sondern ausschließlich bei 'Text'
+	t3lib_extMgm::addToAllTCAtypes(
+		$table = 'tt_content',
+		$str = 'record_reference;;;;1-1-1',
+		$specificTypesList = '',
+		$position = ''
+	);
+	
+	// EN: Add PageTs
+	// DE: PageTs hinzufügen
+	t3lib_extMgm::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/pageTsConfig-Inline.txt">');
+}

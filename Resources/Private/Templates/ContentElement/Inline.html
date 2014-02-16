@@ -1,0 +1,6 @@
+<f:for each="{records}" as="record">
+	<h2>{record.extra_field}</h2>
+	<f:for each="{record.image}" as="image">
+		<f:if condition="{image}"><f:then><f:image src="uploads/tx_ceexamples/{image}" alt="{record.extra_field}" /></f:then></f:if>
+	</f:for>
+</f:for>

@@ -1,6 +1,8 @@
-# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_flexforms.description
+# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_flexforms.label
 enableFlexForms = 1
-# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_derived.description
+# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_derived.label
 enableDerived = 1
-# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_extend.description
+# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_extend.label
 enableExtend = 1
+# cat=basic; type=boolean; label=LLL:EXT:ce_examples/Resources/Private/Language/locallang_db.xml:ceexamples_inline.label
+enableInline = 1

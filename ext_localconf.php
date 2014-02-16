@@ -37,3 +37,20 @@ if (array_key_exists('enableDerived', $extConf) && $extConf['enableDerived']) {
 		$pluginType = Tx_Extbase_Utility_Extension::PLUGIN_TYPE_CONTENT_ELEMENT
 	);
 }
+
+
+// EN: CE referencing data from another table
+// DE: CE referenziert Daten aus einer anderen Tabelle
+if (array_key_exists('enableInline', $extConf) && $extConf['enableInline']) {
+	Tx_Extbase_Utility_Extension::configurePlugin(
+		$extensionName = $_EXTKEY,
+		$pluginName = 'Inline',
+		$controllerActions = array(
+			'ContentElement' => 'inline',
+		),
+		$nonCacheableControllerActions = array(
+			'ContentElement' => '',
+		),
+		$pluginType = Tx_Extbase_Utility_Extension::PLUGIN_TYPE_CONTENT_ELEMENT
+	);
+}
